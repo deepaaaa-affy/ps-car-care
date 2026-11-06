@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "API (server)",
+      "type": "npm",
+      "script": "dev",
+      "path": "server",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": { "regexp": "^x^" },
+        "background": { "activeBegins": true, "beginsPattern": ".", "endsPattern": "API running on" }
+      },
+      "presentation": { "group": "dev", "panel": "dedicated" }
+    },
+    {
+      "label": "Website (client)",
+      "type": "npm",
+      "script": "dev",
+      "path": "client",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": { "regexp": "^x^" },
+        "background": { "activeBegins": true, "beginsPattern": ".", "endsPattern": "Local:" }
+      },
+      "presentation": { "group": "dev", "panel": "dedicated" }
+    },
+    {
+      "label": "Start PS Car Care",
+      "dependsOn": ["API (server)", "Website (client)"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}
